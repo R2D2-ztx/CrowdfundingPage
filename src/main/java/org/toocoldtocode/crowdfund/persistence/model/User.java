@@ -1,8 +1,11 @@
 package org.toocoldtocode.crowdfund.persistence.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name="user")

@@ -1,6 +1,8 @@
 package org.toocoldtocode.crowdfund.persistence.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 public class ChargeRequest {

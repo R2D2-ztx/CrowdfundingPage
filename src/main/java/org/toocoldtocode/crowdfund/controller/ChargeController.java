@@ -14,14 +14,14 @@ import org.toocoldtocode.crowdfund.services.StripeService;
 public class ChargeController {
 
     @Autowired
-    private StripeService paymentsService;
+    private StripeService stripeService;
 
     @PostMapping("/charge")
     public String charge(ChargeRequest chargeRequest, Model model)
             throws StripeException {
         chargeRequest.setDescription("Example charge");
-        chargeRequest.setCurrency(Currency.EUR);
-        Charge charge = paymentsService.charge(chargeRequest);
+        chargeRequest.setCurrency(ChargeRequest.Currency.EUR);
+        Charge charge = stripeService.charge(chargeRequest);
         model.addAttribute("id", charge.getId());
         model.addAttribute("status", charge.getStatus());
         model.addAttribute("chargeId", charge.getId());
